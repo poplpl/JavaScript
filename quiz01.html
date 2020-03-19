@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+	var floor = prompt("층수를 입력하세요");
+	var i; var j;
+	document.write("<table border='1'>");
+	for(i=floor;i>=1;i--){
+		document.write("<tr>");
+		for(j=1;j<5;j++){
+			document.write("<td>");
+			document.write(i+"0"+j+"호");
+			document.write("</td>");
+			
+		}
+		
+		document.write("</tr>");
+	}
+
+	document.write("</table>");
+</script>
+
+
+
+</body>
+</html>

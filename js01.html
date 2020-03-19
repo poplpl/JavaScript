@@ -3,20 +3,157 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-	<script type="text/javascript">
-		var num =0;
-		console.log(num)
-		document.write("head 태그 내 실행 순서: "+num+"<br>")
-		document.write("head 태그 내 실행 순서: "+num+"<br>")
-	</script>
+	<!-- <script type="text/javascript" src="test.js"></script> -->
 
 </head>
 <body>
-		<script type="text/javascript">
-			var num=1;
-			document.write("head 태그 내 실행 순서: "+num+"<br>")
-		</script>
+
+<!-- 	<button type="button" onclick="alert('클릭 발생')">클릭</button>
+
+	<script type="text/javascript">
+		var num = 1;
+		document.write("head 태그 내 실행 순서: " + num + "<br>")
+	</script> -->
+	<hr>
+	<script type="text/javascript">
 	
+		var incData=1; var decData=5; var r1=r2=0;
+		r1=15%6;   
+		
+		document.write("15%3 = "+r1+"<br>");
+		document.write("incData++ ="+incData++ +"<br>");
+		document.write("++incData ="+ ++incData +"<br>");
+		document.write("decData-- = "+decData-- +"<br>");
+		document.write("--decData = "+ --decData +"<br>");
+		r2=incData*decData;
+		document.write("incData * decData = "+r2+"<br>");
+	
+	
+		
+		document.write("<h2>관계 연산자</h2>");
+		var x=5;
+		var y="5";
+		var result;
+		
+		result=(x>y); document.write("x > y :"+result+"<br>")
+		result=(x==y); document.write("x == y :"+result+"<br>")
+		result=(x===y); document.write("x === y :"+result+"<br>")
+		result=(x!=y); document.write("x !=y :"+result+"<br>")
+		result=(x!==y); document.write("x !== y :"+result+"<br>")
+	
+		document.write("<h2>논리 연산자</h2>");
+		document.write("(true && true) : "+(true && true)+"<br>");
+		document.write("(true&&false) :"+(true&&false)+"<br>");
+		document.write("(5>10&& 10>2) :"+(5>10&& 10>2)+"<br>");
+		document.write("(true || true) :"+(true || true)+"<br>");
+		document.write("(true||false) :"+(true||false)+"<br>");
+		document.write("(5>10||10>2) :"+(5>10||10>2)+"<br>");
+		document.write("!(5>10||10>2) :"+!(5>10||10>2)+"<br>");
+		document.write("!true :"+!true+"<br>");
+	
+		document.write("<h2>삼항 연산자</h2>");
+
+		var x=5; var y=7; var result;
+		result=(x>y)? x:y;
+		document.write("큰값 :"+result+"<br>");
+		result=(x>y) ? x-y : y-x;
+		document.write("큰 값 - 작은 값 : "+ result +"<br>")
+		
+		
+		
+		
+		document.write("<h2>복합대입 연산자</h2>");
+		var x1=x2=x3=x4=x5=10; var st="Hello "; 
+		
+		x1+=1; document.write("x1 :"+x1 +"<br>");
+		x2-=2; document.write("x2 : "+ x2 + "<br>")
+		x3*=3; document.write("x3 : "+ x3 + "<br>")
+		x4/=4; document.write("x4 : "+ x4 + "<br>")
+		x5%=5; document.write("x5 : "+ x5 + "<br>")
+		
+		st+="Javascript"; document.write("st : "+ st+"<br>");
+		
+		document.write("x4 : "+parseInt(x4)+"<br>")
+		
+		document.write("<h2> if </h2>");
+		var gender="M"; var age=21;
+		if(gender=="M"){
+			if(age>=19) {result="남자 성인입니다."}
+			else {result="남자 미성년자입니다."}
+		}
+		else{
+			if(age>=19) {result="여자 성인입니다."}
+			else {result="여자 미성년자입니다."}
+		}
+		document.write("당신은 "+result+"<p/>");
+		
+		document.write("<h2> else if </h2>");
+	
+		var point=93; var grade="";
+		if(point>100) {document.write("0~100점 사이 값을 입력해야합니다.<p/>");}
+		else if(point>=90) {grade="A"; document.write("아주 잘했어요.<p/>");}
+		else if(point>=80) {grade="B"; document.write("잘했어요.<p/>");}
+		else if(point>=70) {grade="C"; document.write("조금만 노력하면 잘할수 있어요.<p/>");}
+		else if(point>=60) {grade="D"; document.write("좀더 노력하세요.<p/>");}
+		else{grade="F"; document.write("많이 노력해라씨발아.<p/>");}
+		document.write("학생의 학점은 <b>"+grade+"</b>입니다.<p/>");
+		
+		document.write("<h2> switch </h2>");
+		var day; var week= new Date().getDay();
+		
+		switch(week){
+		case 0: day="일요일";break;
+		case 1: day="월요일";break;
+		case 2: day="화요일";break;
+		case 3: day="수요일";break;
+		case 4: day="목요일";break;
+		case 5: day="금요일";break;
+		case 6: day="토요일";break;
+		default: day="없는 요일";
+		}
+		document.write("오늘은 <b>"+day+"</b>입니다.<p/>")
+		
+		document.write("<h2> for </h2>");
+	
+		var x,y;
+		for(x=2;x<=5;x++){
+			document.write("<b> ---["+ x + "단]--- </b>"+"<br>");
+			for(y=1;y<=9;y++){
+				document.write(x+" * "+ y +" = "+(x*y)+"<br>");
+			}
+		}
+		
+		
+		document.write("<h2> while </h2>");
+		
+		var x=1; var sum=0;
+		while(x<=100) {sum+=x; x++;}
+		document.write("1~100까지 합 : <b>"+sum+"</b>");
+		
+		/* var num; //변수 값이 없음 
+		var obj= null; //객체 변수 값이 없음 
+		document.write("1. 100 : "+typeof 100 +"<br>")
+		document.write("2. 10.5 : "+typeof 10.5 +"<br>")
+		document.write("3. 홍길동 : "+typeof "홍길동" +"<br>")
+		document.write("4. true : "+typeof true +"<br>")
+		document.write("5. [1,2,3] : "+typeof [1,2,3] +"<br>")
+		document.write("6. {name:'홍길동'} : "+typeof {name:'홍길동'} +"<br>")
+		document.write("7. num : "+typeof num +"<br>")
+		document.write("8. obj : "+typeof obj +"<br>")
+	
+		
+		//var test = prompt('입력 하세요')
+		//document.write("===>"+test)
+		
+		var name = prompt('이름을 입력하세요')
+		var age = prompt(name+'님의 나이를 입력하세요')
+		var addr = prompt(name+'님의 주소를 입력하세요')
+		
+		document.write("<table border='1'><tr><td>이름</td> <td>나이</td> <td>주소</td>	</tr><tr><td>"+name+"</td> <td>"+age+"</td> <td>"+addr+"</td></tr></table>")
+			 */
+	</script>
+	
+
 
 
 </body>
