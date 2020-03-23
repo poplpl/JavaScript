@@ -3,11 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+	.image{width:400px; height:400px;}
+	.div {text-align:center; width:400px; height:450px;  background-color: pink;}
+	
+</style>
 </head>
 <body>
+	
 	<script>
+	var i=1;
+	
+ 	function nextImg(){
+		if(i==8) i=1;
+		else i++;
+		document.getElementById("testImg").src = "resources/images/최근상품0"+i+".jpg";
+	}
+	function prevImg(){
+		if(i==1) i=8;
+		else i--;
+		document.getElementById("testImg").src = "resources/images/최근상품0"+i+".jpg";
+	} 
+	
 	
 	
 	</script>
+	
+	
+	<div class="div">
+		<img class = "image" id="testImg" src='resources/images/최근상품01.jpg'>
+		<input type='button' onclick='prevImg()' value='이전'>
+		<input type='button' onclick='nextImg()' value='다음'>
+	</div>
 </body>
 </html>
