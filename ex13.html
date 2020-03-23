@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function test(){
+		fo.submit();
+		location.href="ex11.html?name=홍길동&aaa=살골짜기" 
+	}
+</script>
+</head>
+<body>
+
+	<form id="fo" action="ex12.html">
+		이름<input type="text" name="name"><br>
+		주소<input type="text" name="addr"><br>
+		<input type="submit" value="섬밋"><br>
+		<input type="button" value="버튼" onclick="test()"><br>
+	</form>
+	<input type="button" value="버튼" onclick="location.href='ex10.html'"><br>
+
+
+</body>
+</html>

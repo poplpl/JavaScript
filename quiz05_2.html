@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+		.div{ color:red}
+	</style>
+	<script>
+
+	
+	function pwCheck(){
+		pw = document.getElementById("pw").value;
+		pwchk = document.getElementById("pwchk").value;
+		
+		if(pw==pwchk) {
+			document.getElementById("lbl").innerHTML="확인!";
+			
+		
+		}
+		else {
+			
+			document.getElementById("lbl").innerHTML="불일치!";
+			document.getElementById("pw").value="";
+			document.getElementById("pwchk").value="";
+			document.getElementById("pw").focus();
+		}
+	
+	}
+	
+	function chkData(){
+		if(document.getElementById('id').value==""){
+			alert("아이디는 필수 입력사항입니다.")
+		}
+		else if(document.getElementById('pw').value==""){
+			alert("비번은 필수 입력사항입니다.")
+		}
+		else if(document.getElementById('pwchk').value==""){
+			alert("비번체크 필수 입력사항입니다.")
+		}
+		
+		else{
+			fo.submit();
+		}
+		
+	}
+	
+	
+	</script>
+	
+	
+	
+</head>
+
+
+
+<body>
+
+<h1>계정 등록 페이지입니다.</h1>
+<form id = "fo" action="quiz05_3.html" method="post">
+	<div class="div">
+		<input type="text" id = "id"name="idd" placeholder="아이디" value="">(*필수항목)<br>
+	<input type="text" id ="pw" name="pwd" placeholder="비밀번호" value="">(*필수항목)<br>
+	</div>
+
+	<input type="text" id="pwchk" name="pwdchk" placeholder="비밀번호 확인" value=""onchange="pwCheck()">  
+	<label id="lbl"></label>
+	<br>
+	<input type="text" name="name" placeholder="이름">
+	<hr>
+	<input type="button" value="등록" onclick="chkData()">
+</form>
+
+
+</body>
+</html>
